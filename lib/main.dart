@@ -1,5 +1,5 @@
 import 'package:acatools_app/firebase_options.dart';
-import 'package:acatools_app/screens/home_nav_bar.dart';
+import 'package:acatools_app/screens/login.dart';
 import 'package:acatools_app/theme/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -19,10 +19,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue), AppTheme.lightTheme,
+      theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system, // Handles dark mode based on system settings
-      home: HomeNavBar(),
+      home: LoginScreen(),
     );
   }
 }

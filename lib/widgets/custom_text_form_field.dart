@@ -13,8 +13,7 @@ class CustomTextFormField extends StatelessWidget {
       this.keyboardType,
       required String Text,
       this.controller,
-      this.validator,
-      required Type text});
+      this.validator});
 
   @override
   Widget build(BuildContext context) {

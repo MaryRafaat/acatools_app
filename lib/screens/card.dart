@@ -8,7 +8,12 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Cart')),
       body: const Center(child: Text('Shopping Cart')),
-      bottomNavigationBar: const BottomNavBar(currentIndex: 2),
+      bottomNavigationBar: BottomNavBar(
+        currentIndex: 2,
+        onTap: (index) {
+          // Handle tap
+        },
+      ),
     );
   }
 }

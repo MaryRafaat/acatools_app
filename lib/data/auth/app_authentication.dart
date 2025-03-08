@@ -1,3 +1,4 @@
+import 'package:acatools_app/screens/login.dart';
 import 'package:flutter/material.dart';
 import 'package:acatools_app/screens/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -43,7 +44,7 @@ class AppAuthentication {
     Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(
-        builder: (context) => homeScreen(),
+        builder: (context) => LoginScreen(),
       ),
       (route) => false,
     );

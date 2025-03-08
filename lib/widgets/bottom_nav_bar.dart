@@ -1,12 +1,15 @@
 import 'package:acatools_app/screens/card.dart';
 import 'package:acatools_app/screens/favorite.dart';
+import 'package:acatools_app/screens/home_screen.dart';
 import 'package:acatools_app/screens/profile.dart';
 import 'package:flutter/material.dart';
-import 'package:acatools_app/screens/shop.dart';
 
 class BottomNavBar extends StatelessWidget {
   final int currentIndex;
-  const BottomNavBar({super.key, required this.currentIndex});
+  const BottomNavBar(
+      {super.key,
+      required this.currentIndex,
+      required void Function(int index) onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +18,12 @@ class BottomNavBar extends StatelessWidget {
       onTap: (index) {
         switch (index) {
           case 0:
-            Navigator.push(context,
-                MaterialPageRoute(builder: (_) => const FavoritesScreen()));
+            Navigator.push(
+                context, MaterialPageRoute(builder: (_) => const HomeScreen()));
             break;
           case 1:
-            Navigator.push(
-                context, MaterialPageRoute(builder: (_) => const ShopScreen()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (_) => const FavoritesScreen()));
             break;
           case 2:
             Navigator.push(
@@ -33,8 +36,8 @@ class BottomNavBar extends StatelessWidget {
         }
       },
       items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favorites'),
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Shop'),
+        BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favorites'),
         BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Cart'),
         BottomNavigationBarItem(icon: Icon(Icons.person), label: 'profile'),
       ],

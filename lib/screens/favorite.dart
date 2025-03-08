@@ -8,7 +8,12 @@ class FavoritesScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Favorites')),
       body: const Center(child: Text('Favorite Items')),
-      bottomNavigationBar: const BottomNavBar(currentIndex: 0),
+      bottomNavigationBar: BottomNavBar(
+        currentIndex: 1,
+        onTap: (index) {
+          // Handle navigation tap
+        },
+      ),
     );
   }
 }

@@ -1,20 +1,55 @@
-import 'package:acatools_app/screens/card.dart';
-import 'package:acatools_app/screens/favorite.dart';
+// tool_list_screen.dart
+import 'package:acatools_app/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:acatools_app/data/tools/tools_model.dart';
+import 'package:acatools_app/data/tools/tools_data.dart';
+import 'package:acatools_app/widgets/search_bar.dart';
 
-class homeScreen extends StatefulWidget {
+class ShopScreen extends StatelessWidget {
+  const ShopScreen({super.key});
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('home')),
+      body: const Center(child: Text('shopping item')),
+      bottomNavigationBar: BottomNavBar(
+        currentIndex: 0,
+        onTap: (index) {
+          // Handle the tap event
+        },
+      ),
+    );
+  }
 }
 
-class _HomeScreenState extends State<homeScreen> {
-  int _selectedIndex = 1;
-  final List<Widget> _pages = [
-    FavoritesScreen(),
-    ShopScreen(),
-    CartScreen(),
-    ProfileScreen(),
-  ];
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  List<Tool> allTools = ToolData.getTools();
+  List<Tool> filteredTools = [];
+  int _selectedIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    filteredTools = allTools;
+  }
+
+  void _filterTools(String query) {
+    setState(() {
+      if (query.isEmpty) {
+        filteredTools = allTools;
+      } else {
+        filteredTools =
+            allTools.where((tool) => tool.matchesSearch(query)).toList();
+      }
+    });
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -25,19 +60,32 @@ class _HomeScreenState extends State<homeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.favorite), label: 'Favorites'),
-          BottomNavigationBarItem(icon: Icon(Icons.shop), label: 'Shopping'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart), label: 'Cart'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.settings), label: 'Settings'),
+      appBar: AppBar(
+        title: const Text('Tool Finder'),
+      ),
+      body: Column(
+        children: [
+          SearchBarWidget(onSearch: _filterTools),
+          Expanded(
+            child: ListView.builder(
+              itemCount: filteredTools.length,
+              itemBuilder: (context, index) {
+                final tool = filteredTools[index];
+                return ListTile(
+                  title: Text(tool.name),
+                  subtitle: Text(tool.description),
+                  trailing: Text(tool.category),
+                  onTap: () {
+                    // Add action when tool is tapped if needed
+                  },
+                );
+              },
+            ),
+          ),
         ],
+      ),
+      bottomNavigationBar: BottomNavBar(
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
         onTap: _onItemTapped,
       ),
     );
