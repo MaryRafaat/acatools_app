@@ -1,4 +1,4 @@
-import 'package:acatools_app/theme/app_color.dart';
+import 'package:acatools/theme/app_color.dart';
 import 'package:flutter/material.dart';
 
 import 'theme_utils.dart';
@@ -13,8 +13,6 @@ class AppTheme {
         onPrimary: AppColors.primaryForeground,
         secondary: AppColors.secondaryColor,
         onSecondary: AppColors.secondaryForeground,
-        background: AppColors.backgroundColor,
-        onBackground: AppColors.foregroundColor,
         surface: AppColors.cardColor,
         onSurface: AppColors.cardForeground,
         error: AppColors.destructiveColor,
@@ -48,8 +46,6 @@ class AppTheme {
         onPrimary: AppColors.primaryForeground,
         secondary: AppColors.secondaryColor,
         onSecondary: AppColors.secondaryForeground,
-        background: ThemeUtils.darken(AppColors.backgroundColor),
-        onBackground: AppColors.foregroundColor,
         surface: ThemeUtils.darken(AppColors.cardColor),
         onSurface: AppColors.cardForeground,
         error: AppColors.destructiveColor,

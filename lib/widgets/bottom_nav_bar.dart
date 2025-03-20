@@ -1,7 +1,7 @@
-import 'package:acatools_app/screens/card.dart';
-import 'package:acatools_app/screens/favorite.dart';
-import 'package:acatools_app/screens/home_screen.dart';
-import 'package:acatools_app/screens/profile.dart';
+import 'package:acatools/screens/card.dart';
+import 'package:acatools/screens/favorite.dart';
+import 'package:acatools/screens/home_screen.dart';
+import 'package:acatools/screens/profile.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatelessWidget {
@@ -20,19 +20,15 @@ class BottomNavBar extends StatelessWidget {
           case 0:
             Navigator.push(
                 context, MaterialPageRoute(builder: (_) => const HomeScreen()));
-            break;
           case 1:
             Navigator.push(context,
                 MaterialPageRoute(builder: (_) => const FavoritesScreen()));
-            break;
           case 2:
             Navigator.push(
                 context, MaterialPageRoute(builder: (_) => const CartScreen()));
-            break;
           case 3:
             Navigator.push(context,
-                MaterialPageRoute(builder: (_) => const ProfileScreen()));
-            break;
+                MaterialPageRoute(builder: (_) => ProfileScreen()));
         }
       },
       items: const [

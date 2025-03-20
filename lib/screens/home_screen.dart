@@ -1,9 +1,9 @@
 // tool_list_screen.dart
-import 'package:acatools_app/widgets/bottom_nav_bar.dart';
+import 'package:acatools/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:acatools_app/data/tools/tools_model.dart';
-import 'package:acatools_app/data/tools/tools_data.dart';
-import 'package:acatools_app/widgets/search_bar.dart';
+import 'package:acatools/data/tools/tools_model.dart';
+import 'package:acatools/data/tools/tools_data.dart';
+import 'package:acatools/widgets/search_bar.dart';
 
 class ShopScreen extends StatelessWidget {
   const ShopScreen({super.key});
@@ -75,9 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   title: Text(tool.name),
                   subtitle: Text(tool.description),
                   trailing: Text(tool.category),
-                  onTap: () {
-                    // Add action when tool is tapped if needed
-                  },
+                  onTap: () {},
                 );
               },
             ),

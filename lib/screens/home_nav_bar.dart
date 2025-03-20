@@ -1,8 +1,6 @@
-import 'package:acatools_app/widgets/custom_eveated_button.dart';
+import 'package:acatools/widgets/custom_eveated_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:acatools_app/data/auth/app_authentication.dart';
-
+import 'package:acatools/data/auth/app_authentication.dart';
 
 class HomeNavBar extends StatefulWidget {
   const HomeNavBar({super.key});
@@ -13,7 +11,6 @@ class HomeNavBar extends StatefulWidget {
 
 class _HomeNavBarState extends State<HomeNavBar> {
   List<Widget> screens = <Widget>[
-    
     const Scaffold(
       body: Center(
         child: Text('Profile screen'),
@@ -46,9 +43,9 @@ class _HomeNavBarState extends State<HomeNavBar> {
           children: [
             Spacer(),
             customElevatedButton(
-              text: 'sign out',
+              text: 'Sign out',
               onPressed: () {
-                AppAuthentication.signOut(context);
+                AppAuthentication.signOut();
               },
             ),
             SizedBox(

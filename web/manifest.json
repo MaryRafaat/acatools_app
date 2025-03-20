@@ -1,6 +1,6 @@
 {
-    "name": "acatools_app",
-    "short_name": "acatools_app",
+    "name": "acatools",
+    "short_name": "acatools",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

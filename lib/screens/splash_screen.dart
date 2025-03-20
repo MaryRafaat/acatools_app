@@ -1,4 +1,4 @@
-import 'package:acatools_app/screens/login.dart';
+import 'package:acatools/screens/login.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

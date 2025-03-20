@@ -1,5 +1,5 @@
 // tool_data.dart
-import 'package:acatools_app/data/tools/tools_model.dart';
+import 'package:acatools/data/tools/tools_model.dart';
 
 class ToolData {
   static List<Tool> getTools() {

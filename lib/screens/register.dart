@@ -1,21 +1,21 @@
 import 'package:acatools/data/auth/app_authentication.dart';
 import 'package:acatools/data/validation/validator.dart';
-import 'package:acatools/screens/forgot_password.dart';
+import 'package:acatools/screens/login.dart';
 import 'package:acatools/widgets/custom_text_form_field.dart';
 import 'package:acatools/widgets/custom_eveated_button.dart';
-import 'package:acatools/screens/register.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends State<RegisterScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _nameController = TextEditingController();
   var formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -27,6 +27,19 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            CustomTextFormField(
+                Text: 'Name',
+                controller: _nameController,
+                hintText: 'Name',
+                label: 'Name',
+                keyboardType: TextInputType.name,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Name is required';
+                  }
+                  return null;
+                }),
+            const SizedBox(height: 15),
             CustomTextFormField(
               Text: 'Email',
               controller: _emailController,
@@ -62,15 +75,14 @@ class _LoginScreenState extends State<LoginScreen> {
             customElevatedButton(
                 onPressed: () async {
                   if (formKey.currentState!.validate()) {
-                    //al code aly hytnfz ba3d ma user das submit
-                    AppAuthentication.loginUser(
-                      emailAddress: _emailController.text,
-                      password: _passwordController.text,
-                      context: context,
-                    );
+                    AppAuthentication.registerUser(
+                        emailAddress: _emailController.text,
+                        password: _passwordController.text,
+                        displayName: _nameController.text,
+                        context: context);
                   }
                 },
-                text: 'Login'),
+                text: 'Register'),
             const SizedBox(
               height: 15,
             ),
@@ -78,16 +90,16 @@ class _LoginScreenState extends State<LoginScreen> {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => RegisterScreen()),
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
                 );
               },
-              child: const Text('Register'),
+              child: const Text('Login'),
             ),
             TextButton(
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => ForgotPassword()),
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
                 );
               },
               child: const Text('Forgot Password?'),

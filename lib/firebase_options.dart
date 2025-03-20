@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -25,9 +28,15 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
-        return windows;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for windows - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -40,49 +49,21 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDr8DsaRmnoxJw1VfGfqNe6Bnu5QQGvLh4',
-    appId: '1:104523258889:web:d3956b2bca22bb07d8ecd8',
-    messagingSenderId: '104523258889',
-    projectId: 'acatools-app',
-    authDomain: 'acatools-app.firebaseapp.com',
-    storageBucket: 'acatools-app.firebasestorage.app',
-    measurementId: 'G-9016NE6YM8',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA8mHOAxkaXLOkXpdH4eV1EYuD5PH-W1bw',
-    appId: '1:104523258889:android:d1cd0807a855f630d8ecd8',
-    messagingSenderId: '104523258889',
-    projectId: 'acatools-app',
-    storageBucket: 'acatools-app.firebasestorage.app',
+    apiKey: 'AIzaSyDQyvXW9lks8brNRzg4pvHDwNmm5U_fcBw',
+    appId: '1:40785197737:android:315dc3989dd1e0744b47b8',
+    messagingSenderId: '40785197737',
+    projectId: 'acatools-main',
+    storageBucket: 'acatools-main.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBkjPSMtMtR4iD1zsFwoEkWTEsj6phEUq4',
-    appId: '1:104523258889:ios:2f59194877bb7d37d8ecd8',
-    messagingSenderId: '104523258889',
-    projectId: 'acatools-app',
-    storageBucket: 'acatools-app.firebasestorage.app',
-    iosBundleId: 'com.example.acatoolsApp',
+    apiKey: 'AIzaSyBUFGRJoQAGxzVGJN4IYf39xavWsiuc_Zw',
+    appId: '1:40785197737:ios:cff44bc93a922ac84b47b8',
+    messagingSenderId: '40785197737',
+    projectId: 'acatools-main',
+    storageBucket: 'acatools-main.firebasestorage.app',
+    iosBundleId: 'com.example.acatools',
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBkjPSMtMtR4iD1zsFwoEkWTEsj6phEUq4',
-    appId: '1:104523258889:ios:2f59194877bb7d37d8ecd8',
-    messagingSenderId: '104523258889',
-    projectId: 'acatools-app',
-    storageBucket: 'acatools-app.firebasestorage.app',
-    iosBundleId: 'com.example.acatoolsApp',
-  );
-
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDr8DsaRmnoxJw1VfGfqNe6Bnu5QQGvLh4',
-    appId: '1:104523258889:web:c2cb5c30ce2ddf79d8ecd8',
-    messagingSenderId: '104523258889',
-    projectId: 'acatools-app',
-    authDomain: 'acatools-app.firebaseapp.com',
-    storageBucket: 'acatools-app.firebasestorage.app',
-    measurementId: 'G-MESEH71YP3',
-  );
 }
