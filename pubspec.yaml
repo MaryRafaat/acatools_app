@@ -30,15 +30,29 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
+  cached_network_image: ^3.4.1
+  flutter_svg: ^2.0.17
+  shared_preferences: ^2.5.3
+  connectivity_plus: ^6.1.3
+  flutter_svg_provider: ^1.0.7
+  carousel_slider_plus: ^7.1.0
+  responsive_grid_list: ^1.4.0
+  smooth_page_indicator: ^1.2.1
   cupertino_icons: ^1.0.2
   flutter_vector_icons: ^2.0.0
   firebase_core: ^2.24.2
   firebase_auth: ^4.16.0
-
+  get: ^4.6.6
+  google_fonts: ^6.2.0
+  google_maps_flutter: ^2.5.3
+  flutter_localizations:
+    sdk: flutter
+  country_code_picker: ^2.0.0
+  sizer: ^2.0.15
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -62,8 +76,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+     - assets/
+     - assets/photo/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -77,8 +92,35 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
+  fonts:
+  - family: Rsleway
+    fonts:
+      - asset: assets/fonts/RalewayBold.ttf
+        weight: 700
+      - asset: assets/fonts/RalewayMedium.ttf
+        weight: 500
+      - asset: assets/fonts/RalewayExtraBold.ttf
+        weight: 800
+      - asset: assets/fonts/RalewaySemiBold.ttf
+        weight: 600
+      - asset: assets/fonts/RalewayRegular.ttf
+        weight: 400
+  - family: Poppins
+    fonts:
+      - asset: assets/fonts/PoppinsMedium.ttf
+        weight: 500
+  - family: Nunito Sans
+    fonts:
+      - asset: assets/fonts/NunitoSansLight.ttf
+        weight: 300
+      - asset: assets/fonts/NunitoSansRegular.ttf
+        weight: 400
+      - asset: assets/fonts/NunitoSansSemiBold.ttf
+        weight: 600
+  - family: Everett
+    fonts:
+      - asset: assets/fonts/EverettRegular.ttf
+        weight: 400
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
