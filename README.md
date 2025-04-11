@@ -1,4 +1,4 @@
-# acatools_app
+# acatools
 
 A new Flutter project.
 

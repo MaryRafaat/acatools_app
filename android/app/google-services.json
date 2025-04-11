@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "104523258889",
-    "project_id": "acatools-app",
-    "storage_bucket": "acatools-app.firebasestorage.app"
+    "project_number": "40785197737",
+    "project_id": "acatools-main",
+    "storage_bucket": "acatools-main.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:104523258889:android:d1cd0807a855f630d8ecd8",
+        "mobilesdk_app_id": "1:40785197737:android:315dc3989dd1e0744b47b8",
         "android_client_info": {
-          "package_name": "com.example.acatools_app"
+          "package_name": "com.example.acatools"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyA8mHOAxkaXLOkXpdH4eV1EYuD5PH-W1bw"
+          "current_key": "AIzaSyDQyvXW9lks8brNRzg4pvHDwNmm5U_fcBw"
         }
       ],
       "services": {
