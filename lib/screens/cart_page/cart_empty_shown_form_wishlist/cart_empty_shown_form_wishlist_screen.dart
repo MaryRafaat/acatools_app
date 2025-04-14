@@ -11,7 +11,7 @@ import 'package:acatools_app/screens/cart_page/cart_screen.dart';
 import 'package:acatools_app/screens/profile_voucher_reminder/profile_voucher_reminder_screen.dart';
 import 'package:acatools_app/screens/setting_full/setting_full_screen.dart';
 import 'package:acatools_app/screens/wishlist_page/wishlist_page.dart';
-import 'package:acatools_app/screens/cart_empty_shown_form_wishlist/cart_empty_shown_form_wishlist_controller.dart';
+import 'package:acatools_app/screens/cart_page/cart_empty_shown_form_wishlist/cart_empty_shown_form_wishlist_controller.dart';
 
 class CartEmptyShownFromWishlistScreen
     extends GetWidget<CartEmptyShownFormWishlistController> {
